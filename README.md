@@ -124,3 +124,4 @@ With high-dimensional datasets (meaning datasets with a large number of features
 
 When comparing training set and test set scores, I found that the linear model predicts accurately on the training set, but the R^2 score on the test set is much worse; therefore, we should implement a model that allows us to control this complexity (such as Rigde Regression).
 
+In addition to, the machine learning models did not perform accurately due to poor-quality data; the target vector is highly skewed with zero (0) values.
