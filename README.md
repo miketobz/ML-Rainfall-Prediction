@@ -117,7 +117,7 @@ To deploy this project run
 
 ![App Screenshot](https://media.geeksforgeeks.org/wp-content/uploads/20190610231245/precipitation.png)
 
-![Screenshot]()
+![Screenshot](Rainfall_Prediction_BI_report.png)
 
 ## Lessons Learned
 With high-dimensional datasets (meaning datasets with a large number of features), linear models become more powerful, and there is a higher chance of overfitting.
