@@ -5,8 +5,12 @@ Rainfall Prediction is the application of meteorology and machine learning to pr
 
 Moreover, rainfall greatly affects human life in various sectors such as agriculture and transportation. Additionaly, it can cause natural disasters such as drought, floods, and landslides. The aim of this project is to build an accurate rainfall prediction model so that prescriptive measures can be made.
 
+Governments, communities and individuals spend large amounts of money so that there is enough water available for everyone. Collecting and understanding rainfall data is important so that the right decisions are made.
+
+Rainfall prediction has gained utmost research relevance in recent times due to its complexities and persistent applications such as flood forecasting and monitoring of pollutant concentration levels, among others. Existing models use complex statistical models that are often too costly, both computationally and budgetary, or are not applied to downstream applications. Therefore, approaches that use Machine Learning algorithms in conjunction with time-series data are being explored as an alternative to overcome these drawbacks.
+
 The main objective of this project is to identify the relevant atmospheric features that cause rainfall and predict the intensity
-of daily rainfall using various machine learning algorithms, such as Multivariate Linear Regression (MLR), Multilayer Perceptron Neural Network (MLPNN), and Extreme Gradient Boost (XGBoost).
+of daily rainfall using various machine learning algorithms, such as Multivariate Linear Regression (MLR), Multilayer Perceptron Neural Network (MLPNN), KNeighbors Regressor, and Ridge Regression.
 
 In addition to, Root Mean Squared Error and Mean Absolute Error metrics were used to measure the performance of the machine learning models.
 
@@ -31,8 +35,7 @@ Linear regression is a basic predictive analytics technique that uses historical
 
 Linear regression models have many real-world applications in an array of industries such as economics (e.g. predicting growth), business (e.g. predicting product sales, employee performance), social science (e.g. predicting political leanings from gender or race), healthcare (e.g. predicting blood pressure levels from weight, disease onset from biological factors), and more.
 
-Understanding how to implement linear regression models can unearth stories in data to solve important problems. 
-
+Understanding how to implement linear regression models can unearth stories in data to solve important problems.
 
 ## Authors
 
@@ -115,9 +118,9 @@ To deploy this project run
 ![App Screenshot](https://media.geeksforgeeks.org/wp-content/uploads/20190610231245/precipitation.png)
 
 ![Screenshot]()
+
 ## Lessons Learned
+With high-dimensional datasets (meaning datasets with a large number of features), linear models become more powerful, and there is a higher chance of overfitting.
 
-Governments, communities and individuals spend large amounts of money so that there is enough water available for everyone. Collecting and understanding rainfall data is important so that the right decisions are made.
-
-Rainfall prediction has gained utmost research relevance in recent times due to its complexities and persistent applications such as flood forecasting and monitoring of pollutant concentration levels, among others. Existing models use complex statistical models that are often too costly, both computationally and budgetary, or are not applied to downstream applications. Therefore, approaches that use Machine Learning algorithms in conjunction with time-series data are being explored as an alternative to overcome these drawbacks.
+When comparing training set and test set scores, I found that the linear model predicts accurately on the training set, but the R^2 score on the test set is much worse; therefore, we should implement a model that allows us to control this complexity (such as Rigde Regression).
 
