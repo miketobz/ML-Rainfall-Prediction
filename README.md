@@ -113,7 +113,7 @@ To deploy this project run
 ```
 
 
-## Screenshots
+## Data Visualization
 
 ![App Screenshot](https://media.geeksforgeeks.org/wp-content/uploads/20190610231245/precipitation.png)
 
