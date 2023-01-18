@@ -10,9 +10,9 @@ Governments, communities and individuals spend large amounts of money so that th
 Rainfall prediction has gained utmost research relevance in recent times due to its complexities and persistent applications such as flood forecasting and monitoring of pollutant concentration levels, among others. Existing models use complex statistical models that are often too costly, both computationally and budgetary, or are not applied to downstream applications. Therefore, approaches that use Machine Learning algorithms in conjunction with time-series data are being explored as an alternative to overcome these drawbacks.
 
 The main objective of this project is to identify the relevant atmospheric features that cause rainfall and predict the intensity
-of daily rainfall using various machine learning algorithms, such as Multivariate Linear Regression (MLR), Multilayer Perceptron Neural Network (MLPNN), KNeighbors Regressor, and Ridge Regression.
+of daily rainfall using various machine learning algorithms such as Multivariate Linear Regression (MLR), Multilayer Perceptron Regressor (Neural Network), KNeighbors Regressor, Ridge Regression, Random Forest Regressor, and Support Vector Regression (SVR).
 
-In addition to, Root Mean Squared Error and Mean Absolute Error metrics were used to measure the performance of the machine learning models.
+In addition to, the Root Mean Squared Error (RMSE) and Mean Absolute Error (MAE) metrics were used to measure the performance of the machine learning models.
 
 The dataset was collected from Kaggle. It contains meteorological data of Austin, Texas. Further, Austin has a humid subtropical climate, which means it has long, hot summers and typically mild winters. In July and August, high temps often top out at around 100 degrees Fahrenheit (38 degrees Celsius), sometimes for several days in a row. The humidity is usually only at sauna-like levels just before a rainstorm, but even when it’s not raining, the humidity rarely dips below 30 percent.
 
@@ -64,23 +64,31 @@ Loss(\hat{y},y,W) = -\dfrac{1}{n}\sum_{i=0}^n(y_i \ln {\hat{y_i}} + (1-y_i) \ln{
 
 where 'alpha ||W||_2^2' is an L2-regularization term (aka penalty) that penalizes complex models; and 'alpha > 0' is a non-negative hyperparameter that controls the magnitude of the penalty.
 
-#### GradientBoostingRegressor
-
+#### RandomForestRegressor
 ```http
-  from sklearn import ensemble.GradientBoostingRegressor
+  from sklearn.ensemble import RandomForestRegressor
 ```
 You can play with these parameters to see how the results change.
 
-n_estimators : the number of boosting stages that will be performed. Later, we will plot deviance against boosting iterations.
+n_estimators: int, default=100
+The number of trees in the forest.
 
-max_depth : limits the number of nodes in the tree. The best value depends on the interaction of the input variables.
+criterion: {“squared_error”, “absolute_error”, “friedman_mse”, “poisson”}, default=”squared_error”
+The function to measure the quality of a split. Supported criteria are “squared_error” for the mean squared error, which is equal to variance reduction as feature selection criterion and minimizes the L2 loss using the mean of each terminal node, “friedman_mse”, which uses mean squared error with Friedman’s improvement score for potential splits, “absolute_error” for the mean absolute error, which minimizes the L1 loss using the median of each terminal node, and “poisson” which uses reduction in Poisson deviance to find splits. Training using “absolute_error” is significantly slower than when using “squared_error”.
 
-min_samples_split : the minimum number of samples required to split an internal node.
+New in version 0.18: Mean Absolute Error (MAE) criterion.
 
-learning_rate : how much the contribution of each tree will shrink.
+New in version 1.0: Poisson criterion.
 
-loss : loss function to optimize. The least squares function is used in this case however, there are many other options
+max_depth: int, default=None
+The maximum depth of the tree. If None, then nodes are expanded until all leaves are pure or until all leaves contain less than min_samples_split samples.
 
+min_samples_split: int or float, default=2
+The minimum number of samples required to split an internal node:
+
+If int, then consider min_samples_split as the minimum number.
+
+If float, then min_samples_split is a fraction and ceil(min_samples_split * n_samples) are the minimum number of samples for each split.
 
 ## 🔗 Links
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/michael-tobiko-1563a693)
@@ -122,6 +130,6 @@ To deploy this project run
 ## Lessons Learned
 With high-dimensional datasets (meaning datasets with a large number of features), linear models become more powerful, and there is a higher chance of overfitting.
 
-When comparing training set and test set scores, I found that the linear model predicts accurately on the training set, but the R^2 score on the test set is much worse; therefore, we should implement a model that allows us to control this complexity (such as Rigde Regression).
+In terms of model performance, the Random Forest Regressor model out-performed all other machine learning models. However, the Support Vector Regression came close. The Multilayer Perceptron Regressor's performance was the worst; it displayed a high Root Mean Squared Error value, as compared to the other models.
 
-In conclusion, the machine learning models did not perform accurately due to poor-quality data; the target vector is highly skewed with zero (0) values.
+All things considered, the machine learning models did not perform as expected due to an imbalanced dataset; the target (dependent variable) is highly skewed with zero (0) values.
