@@ -101,7 +101,7 @@ If float, then min_samples_split is a fraction and ceil(min_samples_split * n_sa
 
 ![Demo1](https://media.springernature.com/lw685/springer-static/image/art%3A10.1007%2Fs11069-021-05063-3/MediaObjects/11069_2021_5063_Fig2_HTML.png)
 
-![Demo2](Rainfall Predictions.png)
+![Demo2](https://github.com/miketobz/ML-Rainfall-Prediction/blob/master/Rainfall%20Predictions.png)
 
 
 
